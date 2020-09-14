@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +12,20 @@
 */
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
-// const Factory = use('Factory')
+const Factory = use("Factory");
 
-// Factory.blueprint('App/Models/User', (faker) => {
-//   return {
-//     username: faker.username()
-//   }
-// })
+Factory.blueprint("App/Models/User", async () => {
+  return {
+    firstname: "Elvis",
+    lastname: "Onobo",
+    email: "elvis.onobo@gmail.com",
+    address: "16 Ebun Oluwa Street, Bariga, Lagos",
+    phone: "08039101861",
+    key: "XYCBVag7Y",
+    verified: true,
+    is_admin: 1,
+    next_of_kin: "Faith Onobo",
+    next_of_kin_phone: "08032843866",
+    password: await Hash.make("forthmabel"),
+  };
+});
